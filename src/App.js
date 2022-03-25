@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState, useCallback } from "react"
+import "./App.css"
+import ModelWrapper from "./components/ModelWrapper"
 
 function App() {
+  const [anim, setAnim] = useState(0)
+  const animations = [0, 1, 2, 3, 4, 5]
+  const btnRef = useRef()
+
+  const btnClick = (e) => {
+    e.target
+      .closest(".btnContainer")
+      .querySelectorAll(".btn")
+      .forEach((btn) => {
+        btn.classList.remove("active")
+      })
+
+    e.target.classList.toggle("active")
+    const num = e.target.innerText
+    setAnim(num)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ModelWrapper anim={anim} />
+      <div className="btnContainer">
+        <h1 style={{ color: "#d4d4d4" }}>Choose Animation</h1>
+        {animations.map((num) => (
+          <button className="btn" ref={btnRef} onClick={btnClick}>
+            {num}
+          </button>
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

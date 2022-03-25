@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -35,4 +36,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Canvas {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(43, 44, 55);
+}
+
+.btnContainer {
+  position: absolute;
+  bottom: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn {
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  font-weight: 600;
+  border: none;
+  margin-inline: 0.5em;
+  border-radius: 0.5em;
+  transition: background-color 0.5s ease-out;
+}
+
+.btn.active {
+  background-color: rgb(255, 166, 0);
 }
