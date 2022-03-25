@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from "react"
+import { useRef, useState } from "react"
 import "./App.css"
 import ModelWrapper from "./components/ModelWrapper"
 

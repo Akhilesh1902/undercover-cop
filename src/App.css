@@ -40,11 +40,12 @@
 
 .Canvas {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh !important;
   background-color: rgb(43, 44, 55);
 }
 
 .btnContainer {
+  width: 100%;
   position: absolute;
   bottom: 5em;
   left: 50%;
@@ -62,4 +63,10 @@
 
 .btn.active {
   background-color: rgb(255, 166, 0);
+}
+
+@media screen and (max-width: 650px) {
+  .btn {
+    font-size: 1rem;
+  }
 }
